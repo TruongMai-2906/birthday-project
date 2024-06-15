@@ -218,6 +218,14 @@
   height: auto;
 }
 
+.popup-decor-1 {
+  position: absolute;
+  bottom: 84%;
+  left: -6%;
+  width: 81px;
+  transform: rotate(352deg);
+}
+
 .popup-image-2 {
   position: absolute;
   right: -16px;
@@ -226,12 +234,36 @@
   height: auto;
 }
 
+.popup-decor-2{
+  position: absolute;
+  bottom: 84%;
+  left: -6%;
+  width: 81px;
+  transform: rotate(352deg);
+}
+
 .popup-image-3 {
   position: absolute;
   left: 0;
   bottom: -1px;
   width: 75px;
   height: auto;
+}
+
+.popup-decor-3-1 {
+  position: absolute;
+  bottom: 8%;
+  right: 3%;
+  width: 81px;
+  transform: rotate(352deg);
+}
+
+.popup-decor-3-2 {
+  position: absolute;
+  bottom: 90%;
+  right: 3%;
+  width: 81px;
+  transform: rotate(352deg);
 }
 
 .video {

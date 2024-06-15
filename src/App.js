@@ -8,10 +8,19 @@ function App() {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
+  const [showLocation, setShowLocation] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
+
+    const now = new Date();
+    const target = new Date("2024-06-22");
+
+    if (target.getTime() - now.getTime() < 0) {
+      setShowLocation(true);
+    }
   }, []);
 
   const onOpenPopup = (index) => {
@@ -38,7 +47,7 @@ function App() {
         <img className="image-main" src="/main-image.jpg" alt="main" />
         <div className="agenda">AGENDA</div>
         <div className="cards-container">
-          <div className="cards-line"></div>
+          {/* <div className="cards-line"></div> */}
           <div
             className="card"
             data-aos="fade-up"
@@ -97,24 +106,35 @@ function App() {
           className={`popup-card ${activeCard === 0 && "popup-card-active"}`}
         >
           <div className="popup-subtitle">15h00 - 18h00</div>
-          <div className="popup-title">Decathlon</div>
+          <div className="popup-title">
+            {showLocation ? "Decathlon" : "???"}
+          </div>
           <img className="popup-image-1" src="/card-decathlon.png" alt="card" />
+          <img className="popup-decor-1" src="/decor-1.svg" alt="card" />
         </div>
 
         <div
           className={`popup-card ${activeCard === 1 && "popup-card-active"}`}
         >
           <div className="popup-subtitle">18h00 - 21h00</div>
-          <div className="popup-title">LeMONDE steak</div>
+          <div className="popup-title">
+            {" "}
+            {showLocation ? "LeMONDE steak" : "???"}
+          </div>
           <img className="popup-image-2" src="/card-lemonde.png" alt="card" />
+          <img className="popup-decor-2" src="/decor-1.svg" alt="card" />
         </div>
 
         <div
           className={`popup-card ${activeCard === 2 && "popup-card-active"}`}
         >
           <div className="popup-subtitle">21h00 - ???</div>
-          <div className="popup-title">Noc nha Rooftop</div>
+          <div className="popup-title">
+            {showLocation ? "Noc nha Rooftop" : "???"}
+          </div>
           <img className="popup-image-3" src="/card-rooftop.png" alt="card" />
+          <img className="popup-decor-3-1" src="/decor-3.svg" alt="card" />
+          <img className="popup-decor-3-2" src="/decor-2.svg" alt="card" />
         </div>
       </div>
 
