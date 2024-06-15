@@ -1,38 +1,256 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  position: relative;
+  width: 100%;
+  max-width: 414px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #FDF9DB;
+}
+
+.image-flag {
+  width: 100%;
+  height: auto;
+}
+
+.subtitle {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.title {
+  font-family: "Hanalei Fill", system-ui;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.image-main {
+  display: block;
+  width: 90%;
+  max-width: 290px;
+  height: auto;
+  margin: 18px auto 0;
+}
+
+.agenda {
+  margin-top: 40px;
+  font-family: "Hanalei Fill", system-ui;
+  font-size: 28px;
+  font-weight: 400;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.cards-container {
+  position: relative;
+  margin: 40px 25px 0;
+  padding: 20px 0;
+}
+
+.card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 14px;
+  position: relative;
+  transform: translateX(1px);
+}
+
+.card-right {
+  justify-content: flex-start;
+  transform: translateX(-1px);
+}
+
+.card-decor {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.card-decor-1 {
+  background-color: #CE1159;
+}
+
+.card-decor-2 {
+  background-color: #5EBE3F;
+}
+
+.card-decor-3 {
+  background-color: #FFF00F;
+}
+
+.card-content {
+  width: 165px;
+  height: 45px;
+  background-color: #ffffff;
+  
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(-2px 2px 2px rgba(0,0,0,0.25));
+}
+
+.cards-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+.button {
+  width: 135px;
+  height: 40px;
+  margin: 120px auto 80px;
+
+  background-color: #FFB50F;
+  font-family: "Hanalei Fill", system-ui;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(-2px 2px 2px rgba(0,0,0,0.25));
+}
+
+.image-end-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: auto;
+}
+
+.image-end-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: auto;
+}
+
+.popup {
+  width: 100vw;
+  max-width: 414px;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.popup-active {
+  opacity: 1;
+  pointer-events: visible;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.App-link {
-  color: #61dafb;
+.popup-card {
+  position: absolute;
+  width: calc(100% - 50px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 36px 25px 100px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup-card-active {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.popup-subtitle {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.popup-title {
+  font-family: "Hanalei Fill", system-ui;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.popup-image-1 {
+  position: absolute;
+  right: -20px;
+  bottom: -1px;
+  width: 95px;
+  height: auto;
+}
+
+.popup-image-2 {
+  position: absolute;
+  right: -16px;
+  bottom: -60px;
+  width: 125px;
+  height: auto;
+}
+
+.popup-image-3 {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 75px;
+  height: auto;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.video-active {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
 }
