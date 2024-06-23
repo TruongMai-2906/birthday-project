@@ -55,7 +55,7 @@ function App() {
             onClick={() => onOpenPopup(0)}
           >
             <div className="card-decor card-decor-1"></div>
-            <div className="card-content">15h00 - 18h00</div>
+            <div className="card-content">15h00 - 18h30</div>
           </div>
           <div
             className="card card-right"
@@ -63,7 +63,7 @@ function App() {
             data-aos-offset="200"
             onClick={() => onOpenPopup(1)}
           >
-            <div className="card-content">18h00 - 21h00</div>
+            <div className="card-content">18h30 - 21h00</div>
             <div className="card-decor card-decor-2"></div>
           </div>
           <div
@@ -105,7 +105,7 @@ function App() {
         <div
           className={`popup-card ${activeCard === 0 && "popup-card-active"}`}
         >
-          <div className="popup-subtitle">15h00 - 18h00</div>
+          <div className="popup-subtitle">15h00 - 18h30</div>
           <div className="popup-title">
             {showLocation ? "Decathlon" : "???"}
           </div>
@@ -116,10 +116,12 @@ function App() {
         <div
           className={`popup-card ${activeCard === 1 && "popup-card-active"}`}
         >
-          <div className="popup-subtitle">18h00 - 21h00</div>
+          <img className="popup-decor-2-1" src="/card-steak-1.png" alt="card" />
+          <img className="popup-decor-2-2" src="/card-steak-2.png" alt="card" />
+          <div className="popup-subtitle">18h30 - 21h00</div>
           <div className="popup-title">
             {" "}
-            {showLocation ? "LeMONDE steak" : "???"}
+            {showLocation ? "Steak fries" : "???"}
           </div>
           <img className="popup-image-2" src="/card-lemonde.png" alt="card" />
           <img className="popup-decor-2" src="/decor-1.svg" alt="card" />

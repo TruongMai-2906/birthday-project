@@ -208,6 +208,7 @@
   font-weight: 400;
   text-align: center;
   margin-top: 35px;
+  position: relative;
 }
 
 .popup-image-1 {
@@ -234,12 +235,30 @@
   height: auto;
 }
 
-.popup-decor-2{
+.popup-decor-2 {
   position: absolute;
   bottom: 84%;
   left: -6%;
   width: 81px;
   transform: rotate(352deg);
+}
+
+.popup-decor-2-1 {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  height: 30vh;
+  width: auto;
+  z-index: 1;
+}
+
+.popup-decor-2-2 {
+  position: absolute;
+  bottom: 130%;
+  right: 25%;
+  height: auto;
+  width: 150px;
+  z-index: 1;
 }
 
 .popup-image-3 {
